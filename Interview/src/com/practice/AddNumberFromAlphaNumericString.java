@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class AjayBhaiQuestion {
+public class AddNumberFromAlphaNumericString {
 	public static void main(String[] args) {
 		
 		// using regex approach
-		String st = new String("123a2f4d4dd");
-		String stArray[] = st.split("[a-z]"); // using regex
+		String st = new String("123a2fh4d4dd");
+		String stArray[] = st.split("[a-z]+"); // using regex
 		System.out.println(Arrays.toString(stArray));
 		int sum = 0;
 		for (int i = 0; i < stArray.length; i++) {

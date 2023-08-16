@@ -5,6 +5,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.OptionalInt;
+import java.util.Set;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -36,6 +37,12 @@ public class LambdaExp1 {
 		Predicate<Integer> p3 = n -> n % 2 != 0 && n > 5;
 		int sumOddGT5 = li.stream().filter(p3).mapToInt(Integer::intValue).sum();
 		System.out.println(sumOddGT5);
+		
+		String sentence = "thequickbrownfoxjumpsoverthelazydog";
+
+		Set<Character> count3 = sentence.chars().map(Character::toLowerCase).filter(Character::isAlphabetic)
+				.mapToObj(c -> (char) c).collect(Collectors.toSet());
+		System.out.println(count3.size());
 		
 	}
 
