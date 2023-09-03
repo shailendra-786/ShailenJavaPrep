@@ -29,6 +29,7 @@ public class MapStreams {
 	        strings.add("Banana");
 	        strings.add("grape");
 	        strings.add("Orange");
+	        strings.add("aPPLe");
 
 	        List<String> mixedCaseStrings = getMixedCaseStrings(strings);
 	        System.out.println("Mixed case strings: " + mixedCaseStrings);
