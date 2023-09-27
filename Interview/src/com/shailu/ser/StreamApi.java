@@ -1,4 +1,4 @@
-package com.streamapi;
+package com.shailu.ser;
 
 import java.util.Arrays;
 import java.util.List;

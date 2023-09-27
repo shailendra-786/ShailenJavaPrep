@@ -1,18 +1,68 @@
 package com.shailu;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class LeetHard2 {
-	
+	public static List<List<String>> groupAnagrams(String[] strs) {
+		Map<String, List<String>> map = new HashMap<>();
+		for (String str : strs) {
+			char[] chars = str.toCharArray();
+			Arrays.sort(chars);
+			String key = new String(chars);
+			if (!map.containsKey(key)) {
+				map.put(key, new ArrayList<>());
+			}
+			map.get(key).add(str);
+		}
+		return new ArrayList<>(map.values());
+	}
 
-	
+	public static String makePalindrome(String s) {
+		int i = 0, j = s.length() - 1;
+		while (i < j) {
+			if (s.charAt(i) != s.charAt(j)) {
+				// try removing the character at i
+				if (isPalindrome(s.substring(i + 1, j + 1))) {
+					return s.substring(0, i) + s.substring(i + 1);
+				}
+				// try removing the character at j
+				if (isPalindrome(s.substring(i, j))) {
+					return s.substring(0, j) + s.substring(j + 1);
+				}
+				// if neither works, the string cannot be made a palindrome
+				return "Cannot be made a palindrome by removing at most one character.";
+			}
+			i++;
+			j--;
+		}
+		// the string is already a palindrome
+		return s;
+	}
+
+	public static boolean isPalindrome(String s) {
+		int i = 0, j = s.length() - 1;
+		while (i < j) {
+			if (s.charAt(i) != s.charAt(j)) {
+				return false;
+			}
+			i++;
+			j--;
+		}
+		return true;
+	}
 
 	public static void main(String[] args) {
+		String[] str1 ={"eat","tea","tan","ate","nat","bat"};
+		System.out.println(groupAnagrams(str1));
 		
-		
+		System.out.println(makePalindrome("nitain"));
 		String sortWord = "Myself2 Me1 I4 and3";
 		System.out.println(sortSentence(sortWord));
 		String sorder = "";
@@ -27,10 +77,40 @@ public class LeetHard2 {
 		}
 		System.out.println(sorder.trim().replaceAll("[0-9]", ""));
 
+		String sentence = "thequickbrownfoxjumpsoverthelazydog";
 
-		
+		Set<Character> count3 = sentence.chars().map(Character::toLowerCase).filter(Character::isAlphabetic)
+				.mapToObj(c -> (char) c).collect(Collectors.toSet());
+		System.out.println(count3.size());
 
-		
+		String s1 = "abBAabBAcC";
+		StringBuilder s = new StringBuilder(s1);
+		for (int i = 0; i < s.length() - 1;) {
+			char c1 = s.charAt(i);
+			char c2 = s.charAt(i + 1);
+			if (c1 != c2 && Character.toLowerCase(c1) == Character.toLowerCase(c2)) {
+				s.delete(i, i + 2);
+				if (i > 0) {
+					i--;
+				}
+
+			} else {
+				i++;
+			}
+		}
+		System.out.println(s);
+
+		String jewels = "z", stones = "ZZ";
+		int count = 0;
+		for (int i = 0; i < jewels.length(); i++) {
+			for (int j = 0; j < stones.length(); j++) {
+				if (jewels.charAt(i) == stones.charAt(j)) {
+					count++;
+					System.out.println("count " + count);
+				}
+			}
+		}
+		System.out.println(count);
 
 		String splitString = "RLRRLLRLRL";
 
@@ -88,6 +168,57 @@ public class LeetHard2 {
 	}
 
 	
+	public static boolean isPlalindrom(String str) {
+		for (int i = 0; i < str.length() / 2; i++) {
+			if (str.charAt(i) != str.charAt(str.length() - 1 - i)) {
+				return false;
+			}
+		}
+		return true;
+	}
 
-	
+	public static String LongestSub(String str) {
+		String longest = "";
+
+		for (int i = 0; i < str.length(); i++) {
+			for (int j = str.length() - 1; j > i; j--) {
+				if (str.charAt(i) == str.charAt(j)) {
+					String substr = str.substring(i, j + 1);
+					if (isPlalindrom(substr) && substr.length() > longest.length()) {
+						longest = substr;
+					}
+				}
+			}
+		}
+
+		return longest;
+	}
+
+	// abcabcbb
+	public static String longestSubstringWithoutRepeatingCharacters(String s) {
+		int i = 0;
+		String longest = "";
+		Set<Character> seen = new HashSet<>();
+
+		for (int j = 0; j < s.length(); j++) {
+			if (!seen.contains(s.charAt(j))) {
+				seen.add(s.charAt(j));
+				String current = s.substring(i, j + 1);
+				if (current.length() > longest.length()) {
+					longest = current;
+				}
+			} else {
+				System.out.println(s.charAt(j) + " " + s.charAt(i));
+				System.out.println(s.charAt(i) != s.charAt(j));
+				while (s.charAt(i) != s.charAt(j)) {
+					seen.remove(s.charAt(i));
+					i++;
+				}
+				i++;
+			}
+		}
+
+		return longest;
+	}
+
 }

@@ -4,7 +4,7 @@ public class EqualSumParti {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] nums = {10,5,5,1,1};
+		int[] nums = {10,1,5,1,5};
 		System.out.println(canPartition(nums));
 
 	}

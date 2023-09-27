@@ -31,23 +31,23 @@ public class SequenceSubset {
 		}
 		return li;
 	}
-
-	// optimize way
+	//optimize way
 	public static List<List<Integer>> getSequenceSub(int[] arr) {
-		List<List<Integer>> result = new ArrayList<>();
-		int n = arr.length;
-		for (int i = 0; i < n; i++) {
-			List<Integer> subset = new ArrayList<>();
-			subset.add(arr[i]);
-			while (i < n - 1 && arr[i] + 1 == arr[i + 1]) {
-				subset.add(arr[i + 1]);
-				i++;
-			}
-			if (subset.size() > 1) {
-				result.add(subset);
-			}
-		}
-		return result;
+	    List<List<Integer>> result = new ArrayList<>();
+	    int n = arr.length;
+	    for (int i = 0; i < n; i++) {
+	        List<Integer> subset = new ArrayList<>();
+	        subset.add(arr[i]);
+	        while (i < n - 1 && arr[i] + 1 == arr[i+1]) {
+	            subset.add(arr[i+1]);
+	            i++;
+	        }
+	        if (subset.size() > 1) {
+	            result.add(subset);
+	        }
+	    }
+	    return result;
 	}
+
 
 }

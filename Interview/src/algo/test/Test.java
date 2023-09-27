@@ -16,10 +16,7 @@ public class Test {
 		String str = String.join("", Arrays.stream(arr).mapToObj(String::valueOf).toArray(String[]::new)); // okay
 		System.out.println(str);
 		System.out.println(str.indexOf("2"));		
-		System.out.println(str.lastIndexOf("2"));	
-		
-		
-		
+		System.out.println(str.lastIndexOf("2"));		
 	}
 
 }

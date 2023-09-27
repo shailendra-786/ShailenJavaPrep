@@ -18,7 +18,6 @@ public class LeetHard {
 
 	    while (right < nums.length) {
 	        if (nums[right] == 0) {
-	        	System.out.println(right);
 	            count += (right - left + 1);
 	        } else {
 	            left = right + 1;
@@ -67,7 +66,7 @@ public class LeetHard {
 	public static void main1(String[] args) {
 //		System.out.println(longestValidParentheses(")((()())())"));
 		int[] a = { 7, 2,11, 3, 1, 2, 4, 3 };
-		findSubarray(a,7);
+//		findSubarray(a,7);
 //		System.out.println(longestPalindrome("aabacc"));
 		System.out.println(longestValidParenthesesDP("()("));
 	}

@@ -1,9 +1,7 @@
-package com.utility.regex.example;
+package com.utility.regex;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import com.utility.regex.RegexExpression;
 
 public class SADBUTSADEG {
 	public static void main(String[] args) {
