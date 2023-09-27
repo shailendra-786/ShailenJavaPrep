@@ -1,12 +1,8 @@
 package algo.greedy;
 
-import java.util.Arrays;
-import java.util.Collections;
-
 public class FourDigit {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		String s = "RLRRLLRLRL";
 		System.out.println(balancedStringSplit(s));
 

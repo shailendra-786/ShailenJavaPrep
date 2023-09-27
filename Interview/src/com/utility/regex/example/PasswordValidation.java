@@ -1,7 +1,6 @@
 package com.utility.regex.example;
 
 import java.util.regex.Pattern;
-import java.util.regex.Matcher;
 
 public class PasswordValidation {
     public static void main(String[] args) {

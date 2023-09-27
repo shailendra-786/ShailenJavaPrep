@@ -20,6 +20,7 @@ public class NumberOfCoinToss {
                     tosses = "H" + tosses;
                 }
                 num /= 2;
+                System.out.println(num);
             }
             System.out.println(tosses + " : " + probability);
         }

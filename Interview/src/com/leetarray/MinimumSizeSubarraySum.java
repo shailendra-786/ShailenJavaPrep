@@ -13,6 +13,7 @@ public class MinimumSizeSubarraySum {
 	}
 
 	// to get length
+	
 	public static int minSubarrayLen(int target, int[] nums) {
 		int left = 0;
 		int right = 0;
@@ -35,6 +36,8 @@ public class MinimumSizeSubarraySum {
 	}
 
 	// to get array
+//	int target = 7;
+//	int[] nums = { 2, 3, 1, 2, 4, 3 };
 	public static int[] findSubarray(int[] nums, int targetSum) {
 		int left = 0, right = 0;
 		int currentSum = 0, minLength = nums.length + 1;

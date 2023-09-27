@@ -2,7 +2,7 @@ package algo.test;
 //1147. Longest Chunked Palindrome Decomposition
 public class PalindromHard {
 
-	public static void main1(String[] args) {
+	public static void main(String[] args) {
 //		String text = "antaprezatepzapreanta";
 		String text = "ghiabcdefhelloadamhelloabcdefghi";
 		int len = text.length();
@@ -56,7 +56,7 @@ public class PalindromHard {
         return count;
     }
 
-    public static void main(String[] args) {
+    public static void main1(String[] args) {
         PalindromHard solution = new PalindromHard();
         String text = "ghiabcdefhelloadamhelloabcdefghi";
         int longestDecompositionLength = solution.longestDecomposition(text);
