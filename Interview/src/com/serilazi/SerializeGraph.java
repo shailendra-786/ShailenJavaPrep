@@ -10,14 +10,20 @@ import java.io.Serializable;
 // if you are serialize class Dog then you have to serialize cat and rat class also because here dog call cat. cat call rat show all class 
 //here will be serialize. make sure to all class will implement Serializable otherwise at R.E you will get check yourself 
 class Dog implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
 	Cat c = new Cat();
 }
 
 class Cat implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
 	Rat r = new Rat();
 }
 
 class Rat implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
 	String name = "Bhushaneshawr";
 }
 

@@ -6,4 +6,5 @@
  *
  */
 module Interview {
+	requires java.xml;
 }

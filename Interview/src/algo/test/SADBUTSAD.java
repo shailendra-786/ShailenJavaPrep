@@ -4,12 +4,12 @@ public class SADBUTSAD {
 
 	public static void main1(String[] args) {
 		String str = "sadbutsad";
-		String ubstring = "sad";
-		for(int i=0;i<str.length() && ubstring.length()<str.length()+1-i;i++) {
-			String newstr=str.substring(i, ubstring.length()+i);
-			if(ubstring.equals(newstr)) {
+		String substring = "sad";
+		for(int i=0;i<str.length() && substring.length()<str.length()+1-i;i++) {
+			String newstr=str.substring(i, substring.length()+i);
+			if(substring.equals(newstr)) {
 				System.out.println(i);
-				i = ubstring.length()+i;
+				i = substring.length()+i;
 			}
 		}
 		

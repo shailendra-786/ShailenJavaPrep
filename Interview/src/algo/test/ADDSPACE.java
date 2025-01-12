@@ -3,7 +3,7 @@ package algo.test;
 public class ADDSPACE {
 
 	public static void main1(String[] args) {
-		String str = "shailendra   is comdian  ";
+		String str = "shailendra   is comdian   ";
 		System.out.println("length word" + str.split("\\s+").length);
 		int len = str.split("\\s+").length;
 		String[] str1 = str.split("\\s+");
@@ -40,10 +40,10 @@ public class ADDSPACE {
 	}
 
 	public static void main(String[] args) {
-		StringBuilder sb = new StringBuilder("abcdefghijklmn");
-		getReverseTwoPOint(sb, 3);
+//		StringBuilder sb = new StringBuilder("shailendrasingh");
+//		getReverseTwoPOint(sb, 2);
 		getVowelReverse("");
-		getRemoveOccurenceOFSubString("axxxxyyyyb","xy");
+//		getRemoveOccurenceOFSubString("axxxxyyyyb","xy");
 	}
 
 //	Reverse String II
@@ -74,10 +74,10 @@ public class ADDSPACE {
 	// 345. Reverse Vowels of a String
 	public static String getVowelReverse(String str) {
 //		String s = "hello";
-		String s = "leetcode";
+		String s = "laitcodue";
 
 		System.out.println(s.matches("[AEOUIaeoui]"));
-		String isVowelRegx = "[AEOUIaeoui]";
+		String isVowelRegx = "[AEOUIaeoui]+";
 		char c[] = s.toCharArray();
 		int len = c.length;
 		for (int i = 0; i < len; i++) {
@@ -90,11 +90,11 @@ public class ADDSPACE {
 					c[i] = temp;
 					break;
 				}
-			}
+				System.out.println(c);
+				
+			}//leutcodia
 		}
-		StringBuilder sb = new StringBuilder("axxxyyy");
-		sb.delete(2, 3);
-		System.out.println(sb.delete(2, 3));
+	
 		System.out.println(c);
 		return null;
 	}

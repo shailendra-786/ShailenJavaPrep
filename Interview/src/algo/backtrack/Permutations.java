@@ -27,7 +27,6 @@ public class Permutations {
 			if (temp.contains(nums[i])) {
 				continue;
 			}
-			System.out.println("let see");
 			temp.add(nums[i]);
 			backtrack(nums, temp, result);
 			temp.remove(temp.size() - 1);

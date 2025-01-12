@@ -7,12 +7,13 @@ import java.util.Stack;
 public class MakeStringGreat {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		String str = "lEetcode";
-		System.out.println(makeGood(str));
+//		String str = "abBAabBAcC";
+		System.out.println("with stack " + makeGood(str));
+		System.out.println("without stack " + removeAdjacentDuplicateLowerAndUpperLetter(str));
 
 	}
-	
+
 	public static StringBuilder makeGood(String s) {
 		Stack<Character> st = new Stack<>();
 		for (Character c : s.toCharArray()) {
@@ -27,6 +28,26 @@ public class MakeStringGreat {
 			sb.append(st.pop());
 		}
 		return sb.reverse();
+	}
+
+	public static String removeAdjacentDuplicateLowerAndUpperLetter(String s1) {
+
+		StringBuilder s = new StringBuilder(s1);
+		for (int i = 0; i < s.length() - 1;) {
+			char c1 = s.charAt(i);
+			char c2 = s.charAt(i + 1);
+			if (c1 != c2 && Character.toLowerCase(c1) == Character.toLowerCase(c2)) {
+				s.delete(i, i + 2);
+				if (i > 0) {
+					i--;
+				}
+
+			} else {
+				i++;
+			}
+		}
+
+		return s.toString();
 	}
 
 }

@@ -1,7 +1,5 @@
 package algo.test;
 
-import java.util.*;
-
 public class CountTheRepetitions {
   public int getMaxRepetitions(String s1, int n1, String s2, int n2) {
         char[] array1 = s1.toCharArray(), array2 = s2.toCharArray();
