@@ -1,5 +1,5 @@
 package algo.greedy;
-
+//Leettcode Q 1221
 public class FourDigit {
 
 	public static void main(String[] args) {
